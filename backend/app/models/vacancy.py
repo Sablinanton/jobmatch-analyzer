@@ -1,12 +1,12 @@
 from datetime import datetime
 
-from sqlalchemy import String, Integer, Text, DateTime
+from sqlalchemy import String, Text, DateTime
 from sqlalchemy.orm import mapped_column, Mapped
 
 from app.db.database import Base
 
 
-class Resume(Base):
+class Vacancy(Base):
     __tablename__ = 'vacancies'
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
