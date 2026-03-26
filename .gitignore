@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Env
+.env
+
+# Alembic / logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Python build
+build/
+dist/
+*.egg-info/
