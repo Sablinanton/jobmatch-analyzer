@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, UTC
 
 from sqlalchemy import String, Integer, Text, DateTime
 from sqlalchemy.orm import mapped_column, Mapped
@@ -15,4 +15,4 @@ class Resume(Base):
     desired_position: Mapped[str] = mapped_column(String(255), nullable=False)
     years_of_experience: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     raw_text: Mapped[str] = mapped_column(Text, nullable=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now(), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(UTC), nullable=False)
