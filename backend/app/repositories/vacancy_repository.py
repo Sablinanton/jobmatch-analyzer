@@ -1,3 +1,5 @@
+from typing import Type
+
 from sqlalchemy.orm import Session
 
 from app.models import Vacancy
@@ -15,5 +17,12 @@ class VacancyRepository:
         self.db.refresh(vacancy)
         return vacancy
 
-    def get_all(self):
+    def get_all(self) -> list[Type[Vacancy]]:
         return self.db.query(Vacancy).order_by(Vacancy.id.desc()).all()
+
+    def get_by_id(self, vacancy_id: int) -> Vacancy | None:
+        return self.db.query(Vacancy).filter(Vacancy.id == vacancy_id).first()
+
+    def delete(self, vacancy: Vacancy) -> None:
+        self.db.delete(vacancy)
+        self.db.commit()
