@@ -3,7 +3,7 @@ from datetime import datetime
 from pydantic import BaseModel, Field
 
 
-class VacancyCtrate(BaseModel):
+class VacancyCreate(BaseModel):
     title: str = Field(min_length=1, max_length=255)
     company: str = Field(min_length=1, max_length=255)
     level: str = Field(min_length=1, max_length=50)

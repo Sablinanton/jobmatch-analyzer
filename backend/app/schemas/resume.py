@@ -3,7 +3,7 @@ from datetime import datetime
 from pydantic import BaseModel, Field
 
 
-class ResumeCtrate(BaseModel):
+class ResumeCreate(BaseModel):
     title: str = Field(min_length=1, max_length=255)
     candidate_name: str = Field(min_length=1, max_length=255)
     desired_position: str = Field(min_length=1, max_length=255)
