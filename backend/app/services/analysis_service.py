@@ -11,7 +11,7 @@ from app.utils.skill_extractor import extract_skills_from_text
 
 class AnalysisService:
     def __init__(self, db: Session):
-        self.repository = AnalysisRepository(db)
+        self.analysis_repository = AnalysisRepository(db)
         self.resume_repository = ResumeRepository(db)
         self.vacancy_repository = VacancyRepository(db)
 

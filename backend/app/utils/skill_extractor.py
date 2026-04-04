@@ -26,7 +26,7 @@ KNOWN_SKILLS = [
 ]
 
 
-def extract_skills_from_text(text: str) -> list[str]
+def extract_skills_from_text(text: str) -> list[str]:
     normalized_text = normalize_text(text)
     found_skills: list[str] = []
 
